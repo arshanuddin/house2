@@ -24,7 +24,7 @@ async function runExample() {
      x[17] = document.getElementById('box18').value;
      x[18] = document.getElementById('box19').value;
      x[19] = document.getElementById('box20').value;
-
+     x[20] = document.getElementById('box21').value;
     let tensorX = new ort.Tensor('float32', x, [1, 20] );
     let feeds = {float_input: tensorX};
 
