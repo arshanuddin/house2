@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+  	<script src="./index.js"></script>
+    
+   	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <title>house Rating </title>
+  
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    label {
+      width: 48%;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #predictions {
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4caf50;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>House Prediction Using XGboost </h1>
+  </header>
+
+  <form>
+    <!-- Update IDs and labels accordingly -->
+    <label for="box1">id:</label>
+    <input type="text" value="0" id="box1">
+
+    <label for="box2">Date:</label>
+    <input type="text" value="0" id="box2">
+
+    <label for="box3">Price:</label>
+    <input type="text" value="0" id="box3">
+    
+    <label for="box4">Bedrooms:</label>
+    <input type="text" value="0" id="box4">
+    
+    <label for="box5">Bathroom:</label>
+    <input type="text" value="0" id="box5">
+    
+     <label for="box6">Sqft Living:</label>
+    <input type="text" value="0" id="box6">
+    
+     <label for="box7">Sqft Lot:</label>
+    <input type="text" value="0" id="box7">
+    
+     <label for="box8">No of Floors:</label>
+    <input type="text" value="0" id="box8">
+    
+     <label for="box9">Waterfront:</label>
+    <input type="text" value="0" id="box9">
+    
+    <label for="box10">View:</label>
+    <input type="text" value="0" id="box10">
+    
+    <label for="box11">Condition of the house:</label>
+    <input type="text" value="0" id="box11">
+    
+    <label for="box12">House Grade:</label>
+    <input type="text" value="0" id="box12">
+    
+    <label for="box13">Sqft Above:</label>
+    <input type="text" value="0" id="box13">
+    
+    <label for="box14">Sqft Basement:</label>
+    <input type="text" value="0" id="box12">
+    
+    <label for="box13">Year Built:</label>
+    <input type="text" value="0" id="box14">
+    
+    <label for="box15">Year Renovated:</label>
+    <input type="text" value="0" id="box15">
+    
+    <label for="box16">Area Zipcode:</label>
+    <input type="text" value="0" id="box16">
+    
+    <label for="box17">Latitude:</label>
+    <input type="text" value="0" id="box17">
+    
+    <label for="box18">Longitude:</label>
+    <input type="text" value="0" id="box18">
+    
+    <label for="box19">Sqft Living 15:</label>
+    <input type="text" value="0" id="box19">
+    
+    <label for="box20">Sqft Lot 15:</label>
+    <input type="text" value="0" id="box20">
+    
+     
+    <button type="button" onclick="runExample()">Run Example</button>
+  </form>
+
+  <div id="predictions"></div>
+
+
+</body>
+
+</html>
